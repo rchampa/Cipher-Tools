@@ -23,7 +23,7 @@ public class TestMyCipher {
 		};
 		
 		System.out.println("ENCRYPTING");
-		MyCipher myCipher = new MyCipher("yo me llamo Ralph");
+		MyCipher myCipher = new MyCipher("Yo me llamo Ralph");
 		List<MyCipherData> cipherList = new ArrayList<MyCipherData>();
 		for (String myData : test_bench) {
 			MyCipherData myCipherData = myCipher.encryptUTF8(myData);
