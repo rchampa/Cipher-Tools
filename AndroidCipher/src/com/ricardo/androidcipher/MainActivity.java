@@ -19,7 +19,14 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		tv_text = (TextView)findViewById(R.id.tv_text);
 		
-		PRNGFixes.apply();
+		//According to http://android-developers.blogspot.com.es/2013/08/some-securerandom-thoughts.html
+		try{
+        	PRNGFixes.apply();
+        }
+        catch(Exception e){
+        	e.printStackTrace();
+        }
+		
 		String[] test_bench = {
 				"{id:1, name:Lucía, age:25, country:España}",
 				"{id:2, name:Ricardo, age:27, country:Perú}",
