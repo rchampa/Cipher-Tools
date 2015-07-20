@@ -85,13 +85,13 @@ public class MyCipher {
 		byte[] keyStart = this.mySecret.getBytes("utf-8");
 		KeyGenerator kgen = KeyGenerator.getInstance(ALGORITHM);
 		
-		//Oh dear Android... and its shity implementations
-		SecureRandom sr = null;
-		if (android.os.Build.VERSION.SDK_INT >= 17) {
-		    sr = SecureRandom.getInstance("SHA1PRNG", "Crypto");
-		} else {
-		    sr = SecureRandom.getInstance("SHA1PRNG");
-		}
+		SecureRandom sr = SecureRandom.getInstance("SHA1PRNG", "Crypto");
+//		if (android.os.Build.VERSION.SDK_INT >= 17) {
+//		    sr = SecureRandom.getInstance("SHA1PRNG", "Crypto");
+//		} else {
+//		    sr = SecureRandom.getInstance("SHA1PRNG");
+//		}
+		
 		
 		//SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
 		sr.setSeed(keyStart);
